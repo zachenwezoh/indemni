@@ -5,10 +5,11 @@ body, html {
     height: 100%;
     box-sizing: border-box;
     background-color: black;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
-    max-width: 66%; /* Set the maximum width to a more aesthetic width */
+    max-width: 80%; /* Set the maximum width to a more aesthetic width */
     margin: 0 auto; /* Center the container */
 }
 
@@ -49,125 +50,165 @@ body, html {
 
 /* Hero Section Styles */
 .hero-section {
+    position: relative;
+    min-height: 100vh; /* Changed from height to min-height for content flexibility */
     text-align: center;
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    color: rgb(255, 255, 255);
-    background-color: #000000;
+    color: #ffffff;
+    background: #000; /* Fallback color in case video doesn't load */
     font-family: 'Poppins', sans-serif;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+}
+
+.background-gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire section */
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.2; /* Adjust the opacity to make content stand out */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Ensure the content appears above the video */
+    margin: 0 auto;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 .hero-section h1 {
-    font-size: 50px;
-    margin: 0 0 2rem 0;
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    font-weight: 800;
+    text-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.05rem;
+    background: linear-gradient(to right, #74b69a, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-section p {
-    color: #9E9E9E;
-    font-size: 18px;
-    margin-bottom: 2rem;
-    max-width: 500px;
+    color: #e0e0e0;
+    font-size: 1.8rem;
+    margin-bottom: 3.5rem;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.7;
+    font-weight: 300;
 }
 
-.contact-form-section {
-    position: relative;
-    padding: 80px 0;
-    overflow: hidden;
+.cta-button {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background-color: #74b69a;
+    color: #000;
+    border-radius: 30px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-form-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('world.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.05; /* Adjust this value to control the image visibility */
-    z-index: 1;
+.cta-button:hover {
+    background-color: #5c977d;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
-.content-wrapper {
-    position: relative;
-    z-index: ;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Media query for responsiveness */
-@media (max-width: 768px) {
-    .contact-form-section {
-        padding: 60px 0;
-    }
-
-    .calendly-inline-widget {
-        height: 600px;
-    }
-}
-
-/* Style for the container of the Calendly widget */
-.calendly-container {
-    width: 100%; /* Full width of its parent */
-    height: 100%; /* Full height of its parent */
-    min-height: 650px; /* Minimum height to ensure the widget is visible */
-    position: relative; /* Create a positioning context */
-}
-
-/* Style for the Calendly inline widget */
-.calendly-inline-widget {
-    position: absolute; /* Position it absolutely within its container */
-    top: 0;
-    left: 0;
-    width: 100%; /* Full width of its container */
-    height: 100%; /* Full height of its container */
-    min-height: 650px; /* Minimum height, same as container */
-}
-
-/* Ensure the Calendly iframe takes up full space */
-.calendly-inline-widget iframe {
-    width: 100%;
-    height: 100%;
-    border: 0; /* Remove default iframe border */
-}
 
 .features {
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping to the next line if necessary */
+    justify-content: center; /* Center content within the container */
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    gap: 2rem;
+    z-index: 1;
+    position: relative;
+    animation: slideIn 1.5s ease-in-out; /* Slide-in animation */
+    padding: 0 2rem; /* Adds padding to prevent overflow */
+}
 
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
 }
 
 .feature {
-    background-color: #18181c;
-    padding: 30px;
-    width: 25%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px 10px;
-    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    flex: 1 1 280px; /* Allows flexibility but ensures minimum width */
+    max-width: 280px; /* Ensure the boxes don't grow too large */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 .feature-icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 20px;
+    width: 70px; /* Slightly larger icon for prominence */
+    height: 70px;
+    margin-bottom: 2rem;
+    border-radius: 35%;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
 }
 
 .feature h3 {
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
+    font-size: 2rem; /* Increased font size */
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
 }
 
 .feature p {
-    color: #9E9E9E;
+    color: #e0e0e0;
+    font-size: 1.5rem; /* Increased font size */
+    line-height: 1.6;
 }
+
+/* Responsive Styles */
+@media (max-width: 1768px) {
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.6rem;
+    }
+
+    .features {
+        flex-wrap:wrap;
+        gap: 2rem;
+        overflow: hidden;
+        justify-content: center; /* Centered on small screens */
+    }
+
+    .feature {
+        flex: 0 0 100%; /* Full width on smaller screens */
+        max-width: 100%; /* Ensure no overflow */
+    }
+}
+
 
 /* Challenges Section Styles */
 .challenges-section {
@@ -488,6 +529,72 @@ blockquote footer {
 
 
 /* Contact Form Section Styles */
+
+.contact-form-section {
+    position: relative;
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.contact-form-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('world.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.05; /* Adjust this value to control the image visibility */
+    z-index: 1;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: ;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .contact-form-section {
+        padding: 60px 0;
+    }
+
+    .calendly-inline-widget {
+        height: 600px;
+    }
+}
+
+/* Style for the container of the Calendly widget */
+.calendly-container {
+    width: 100%; /* Full width of its parent */
+    height: 100%; /* Full height of its parent */
+    min-height: 650px; /* Minimum height to ensure the widget is visible */
+    position: relative; /* Create a positioning context */
+}
+
+/* Style for the Calendly inline widget */
+.calendly-inline-widget {
+    position: absolute; /* Position it absolutely within its container */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of its container */
+    height: 100%; /* Full height of its container */
+    min-height: 650px; /* Minimum height, same as container */
+}
+
+/* Ensure the Calendly iframe takes up full space */
+.calendly-inline-widget iframe {
+    width: 100%;
+    height: 100%;
+    border: 0; /* Remove default iframe border */
+}
+
 .contact-form-section {
     display: flex;
     flex-direction: row;
