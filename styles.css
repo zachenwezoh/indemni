@@ -9,7 +9,6 @@ body, html {
 }
 
 .container {
-    max-width: 80%; /* Set the maximum width to a more aesthetic width */
     margin: 0 auto; /* Center the container */
 }
 
@@ -286,7 +285,7 @@ body, html {
     .challenges-container {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between; /* Better spacing between challenges */
+        justify-content: center;
     }
 
     .challenge {
