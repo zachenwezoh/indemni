@@ -38,7 +38,10 @@ function PricingArea() {
                     <div className="pricing-top">
                       <div className="pricing-header">
                         <div className="icon">
-                          <i className="fa-regular fa-circle-radiation"></i>
+                        <img
+                                src="/images/pricing/icon-shape-one.png"
+                                alt="Chat example Image"
+                              />
                         </div>
                         <h4 className="title color-var-one">Basic</h4>
                         <p className="subtitle">
@@ -71,8 +74,11 @@ function PricingArea() {
                   <div className="pricing-table-inner">
                     <div className="pricing-top">
                       <div className="pricing-header">
-                        <div className="icon">
-                          <i className="fa-sharp fa-regular fa-flower"></i>
+                      <div className="icon">
+                        <img
+                                src="/images/pricing/icon-shape-two.png"
+                                alt="Chat example Image"
+                              />
                         </div>
                         <h4 className="title color-var-two">Premium</h4>
                         <p className="subtitle">
@@ -111,8 +117,11 @@ function PricingArea() {
                   <div className="pricing-table-inner">
                     <div className="pricing-top">
                       <div className="pricing-header">
-                        <div className="icon">
-                          <i className="fa-sharp fa-regular fa-waveform-lines"></i>
+                      <div className="icon">
+                        <img
+                                src="/images/pricing/icon-shape-three.png"
+                                alt="Chat example Image"
+                              />
                         </div>
                         <h4 className="title color-var-three">Enterprise</h4>
                         <p className="subtitle">
